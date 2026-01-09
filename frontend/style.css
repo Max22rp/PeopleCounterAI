@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  font-family: 'TH SarabunPSK', sans-serif;
+  background-color: #f8f9fb;
+  color: #333;
+  line-height: 1.8;
+}
+
+.navbar {
+  background-color: #1b1b1b;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.navbar .logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #00bcd4;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  margin-left: 25px;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #00bcd4;
+}
+
+.hero {
+  background: linear-gradient(rgba(0, 188, 212, 0.3), rgba(0, 0, 0, 0.6)), url('crowd.jpg') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background-color: #00bcd4;
+  color: white;
+  padding: 12px 28px;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s;
+  font-size: 20px;
+}
+
+.btn:hover {
+  background-color: #0097a7;
+}
+
+.content {
+  padding: 100px 15%;
+  background-color: white;
+  margin-top: 60px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
+
+.content h2 {
+  color: #00bcd4;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.upload-section {
+  text-align: center;
+  margin-top: 30px;
+  padding: 40px;
+  border: 2px dashed #00bcd4;
+  border-radius: 10px;
+  background-color: #eaf8fa;
+}
+
+.upload-section input[type='file'] {
+  margin-top: 15px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+#result {
+  margin-top: 25px;
+  font-size: 22px;
+  color: #0097a7;
+  font-weight: bold;
+}
+
+#outputImage {
+  display: none;
+  margin: 30px auto;
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+footer {
+  background-color: #1b1b1b;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}

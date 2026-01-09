@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>โปรแกรมนับจำนวนคนด้วย AI (PeopleCounterAI)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">PeopleCounterAI</div>
+    <ul>
+      <li><a href="#home">หน้าแรก</a></li>
+      <li><a href="#about">เกี่ยวกับโครงงาน</a></li>
+      <li><a href="#demo">AI powered processing Zone</a></li>
+    </ul>
+  </nav>
+
+  <section id="home" class="hero">
+    <div class="overlay">
+      <h1>โปรแกรมนับจำนวนคนด้วย AI</h1>
+      <p>ระบบอัจฉริยะสำหรับการตรวจจับและนับจำนวนคนอัตโนมัติ</p>
+      <a href="#demo" class="btn">ใช้งาน</a>
+    </div>
+  </section>
+
+  <section id="about" class="content">
+    <h2>เกี่ยวกับโครงงาน</h2>
+    <p>โครงงานนี้มีชื่อว่า <strong>“PeopleCounterAI”</strong> พัฒนาเพื่อช่วยตรวจจับและนับจำนวนคนโดยใช้เทคโนโลยี AI และโมเดล Roboflow</p>
+  </section>
+
+  <section id="demo" class="content">
+    <h2>AI powered processing Zone</h2>
+    <p>อัปโหลดภาพเพื่อให้ระบบ AI ตรวจนับจำนวนคน พร้อมแสดงภาพผลลัพธ์ที่มีกรอบ Bounding Box</p>
+    <div class="upload-section">
+      <input type="file" id="imageUpload" accept="image/*">
+      <button class="btn" onclick="countPeople()">อัปโหลดและตรวจนับ</button>
+      <div id="result"></div>
+      <img id="outputImage" alt="ผลการตรวจจับคนในภาพ"
+         style="display:none; max-width:100%; margin-top:10px;">
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2568 PeopleCounterAI | ระบบนับจำนวนคนด้วยปัญญาประดิษฐ์</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
