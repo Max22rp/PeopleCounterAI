@@ -20,7 +20,8 @@ def serve_frontend():
 def count_people():
     return jsonify({
         "message": "AI inference is temporarily disabled on this server",
-        "people_count": 0
+         "people_count": None,
+        "image_data": None
     })
 
 
