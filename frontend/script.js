@@ -11,43 +11,41 @@ async function countPeople() {
     return;
   }
 
-  // 2) เตรียม FormData ส่งไป backend
+  // 2) เตรียม FormData
   const formData = new FormData();
   formData.append('image', fileInput.files[0]);
 
-  // 3) ขณะรอผล
-  resultDiv.innerText = 'กำลังประมวลผลด้วย AI...';
+  // 3) แสดงสถานะ
+  resultDiv.innerText = 'กำลังประมวลผล...';
   outputImage.style.display = 'none';
 
   try {
-    // 4) ยิงไปหา Flask ที่ /count-people  (ให้ตรงกับ app.py)
-    const response = await fetch('http://127.0.0.1:5000/count-people', {
+    // ✅ ใช้ relative path (สำคัญมาก)
+    const response = await fetch('/count-people', {
       method: 'POST',
       body: formData
     });
 
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-
-    // 5) อ่าน JSON ตามที่ app.py ส่งกลับมา
-    // { "people_count": count, "image_data": "data:image/jpeg;base64,...." }
     const data = await response.json();
     console.log('DATA จาก backend = ', data);
+
+    // 🔹 กรณี AI ยังปิดอยู่ (demo mode)
+    if (data.message) {
+      resultDiv.innerHTML =
+        '⚠️ <b>โหมดสาธิต (Demo)</b><br>ระบบ AI ปิดชั่วคราว';
+      return;
+    }
 
     const count = data.people_count ?? 0;
     resultDiv.innerText = `ผลการตรวจจับ: พบ ${count} คนในภาพ`;
 
-    // 6) แสดงภาพผลลัพธ์ที่มีกรอบ (image_data)
     if (data.image_data) {
-      outputImage.src = data.image_data;   // มี prefix data:image/jpeg;base64, มาแล้ว
+      outputImage.src = data.image_data;
       outputImage.style.display = 'block';
     }
 
   } catch (err) {
     console.error(err);
-    resultDiv.innerText = 'เกิดข้อผิดพลาดในการประมวลผล กรุณาลองใหม่อีกครั้ง';
+    resultDiv.innerText = 'ไม่สามารถเชื่อมต่อเซิร์ฟเวอร์ได้';
   }
 }
-
-
